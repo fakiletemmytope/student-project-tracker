@@ -2,7 +2,7 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main ]  # or change to your target branch
+    branches: [ main ] # or change to your target branch
 
 env:
   IMAGE_NAME: temmytope/student-tracker
@@ -33,7 +33,6 @@ jobs:
         username: temmytope
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          su temmytope
           docker pull $IMAGE_NAME
           docker stop $CONTAINER_NAME || true
           docker rm $CONTAINER_NAME || true
