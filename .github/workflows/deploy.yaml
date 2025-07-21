@@ -37,7 +37,7 @@ jobs:
           echo "SSH success!"
           whoami
           docker version
-          docker pull $IMAGE_NAME
-          docker stop $CONTAINER_NAME || true
-          docker rm $CONTAINER_NAME || true
-          docker run -d --name $CONTAINER_NAME -p 8080:8000 $IMAGE_NAME
+          docker pull temmytope/student-tracker
+          docker stop student-tracker || true
+          docker rm student-tracker || true
+          docker run -d --name student-tracker -p 8080:8000 temmytope/student-tracker
