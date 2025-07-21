@@ -7,7 +7,7 @@ on:
 env:
   IMAGE_NAME: temmytope/student-tracker
   CONTAINER_NAME: student-tracker
-  EC2_HOST: temmytope@ec2-54-85-129-43.compute-1.amazonaws.com
+  EC2_HOST: ubuntu@ec2-54-85-129-43.compute-1.amazonaws.com
 
 jobs:
   build-and-deploy:
@@ -33,6 +33,7 @@ jobs:
         username: temmytope
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
+          su temmytope
           docker pull $IMAGE_NAME
           docker stop $CONTAINER_NAME || true
           docker rm $CONTAINER_NAME || true
