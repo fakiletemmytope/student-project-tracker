@@ -52,4 +52,4 @@ async def update_submit(
 @app.get("/admin", response_class=HTMLResponse)
 async def admin_panel(request: Request):
     students = await get_all_students()
-    return templates.TemplateResponse("admin.html", {"request": request, "students
+    return templates.TemplateResponse("admin.html", {"request": request, "students":students})
