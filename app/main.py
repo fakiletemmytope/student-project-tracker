@@ -47,3 +47,9 @@ async def update_submit(
 ):
     await update_student_progress(name, week, status)
     return templates.TemplateResponse("update.html", {"request": request, "message": "Progress updated successfully!"})
+
+# added Admin routes operations - Get all students
+@app.get("/admin", response_class=HTMLResponse)
+async def admin_panel(request: Request):
+    students = await get_all_students()
+    return templates.TemplateResponse("admin.html", {"request": request, "students
