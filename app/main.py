@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
-from app.crud import create_student, get_student_progress, update_student_progress, count_students
+from app.crud import create_student, get_student_progress, update_student_progress, count_students, get_all_student
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
