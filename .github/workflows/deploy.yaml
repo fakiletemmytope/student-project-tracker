@@ -8,6 +8,7 @@ env:
   IMAGE_NAME: temmytope/student-tracker
   CONTAINER_NAME: student-tracker
   EC2_HOST: ubuntu@ec2-54-85-129-43.compute-1.amazonaws.com
+  ACTIONS_STEP_DEBUG: true
 
 jobs:
   build-and-deploy:
